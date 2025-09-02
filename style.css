@@ -1,0 +1,164 @@
+/* CSS Variables for colors with sRGB fallbacks */
+:root {
+    --bg-color: #ecf0f1;
+    --text-color: #34495e;
+    --header-start: #34495e;
+    --header-end: #2c3e50;
+    --accent-color: #1abc9c;
+    --card-bg: #ffffff;
+    --meta-text: #7f8c8d;
+    --light-text: #ecf0f1;
+}
+
+/* Wide Gamut P3 Colors for supported displays */
+@supports (color: oklch(0 0 0)) {
+    :root {
+        --bg-color: oklch(96% 0.01 258);
+        --text-color: oklch(33% 0.03 258);
+        --header-start: oklch(35% 0.05 259);
+        --header-end: oklch(29.5% 0.05 258.5);
+        --accent-color: oklch(67% 0.2 195);
+        --card-bg: oklch(100% 0 0);
+        --meta-text: oklch(56% 0.01 258);
+        --light-text: oklch(96% 0.01 258);
+    }
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for main content */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+/* Header and Navigation with Gradient */
+header {
+    background-color: var(--header-end); /* Fallback */
+    background-image: linear-gradient(145deg, var(--header-start), var(--header-end));
+    color: var(--light-text);
+    padding: 1.5rem 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header nav a {
+    color: var(--light-text);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Post Styling with Hover Effect */
+.post-preview, .full-post {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+        
+.post-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+}
+
+.post-preview h2, .full-post h2 {
+    margin-top: 0;
+}
+
+.post-preview h2 a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2rem;
+}
+
+.full-post h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.post-preview h2 a:hover {
+    color: var(--accent-color);
+}
+
+.post-meta {
+    color: var(--meta-text);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* List styling inside a post */
+.full-post ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.full-post li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto;
+    color: var(--meta-text);
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .post-preview h2 a, .full-post h2 {
+        font-size: 1.5rem;
+    }
+    .container {
+        margin: 1rem auto;
+    }
+    .post-preview, .full-post {
+        padding: 1.5rem;
+    }
+}
+
