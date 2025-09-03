@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Browser Wars to Engine Monoculture - The Digital Canvas of Paldumais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section with Blog Title and Navigation -->
+    <header>
+        <h1>The Digital Canvas of Paldumais</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Area for the full post -->
+    <main class="container">
+        <article class="full-post">
+            <h2>From Browser Wars to Engine Monoculture: The Shift Toward WebKit and Blink</h2>
+            <p class="post-meta">Published on September 12, 2025 by Pierre-Alexandre Lévesque Dumais</p>
+
+            <p>The modern web feels smooth and standardized compared to its chaotic early days, but this consistency is relatively new. Only 15–20 years ago, browsing the internet was a frustrating minefield of incompatibilities. Developers had to fight against half a dozen rendering engines, each interpreting HTML, CSS, and JavaScript differently. Over time, the industry consolidated into a near-monopoly of <strong>WebKit and Blink-based browsers</strong>, leaving only Firefox’s Gecko as a true alternative.</p>
+            <p>This article traces that journey — from the multi-engine landscape of the 1990s and early 2000s to today’s WebKit/Blink dominance.</p>
+
+            <h3>1. The Early Browser Landscape (1990s – mid 2000s)</h3>
+            <p>In the beginning, the web was built on openness and experimentation. This led to parallel development of browser engines, each with its own vision of how the web <em>should</em> work.</p>
+            <h4>Netscape Navigator and Gecko</h4>
+            <p>Netscape (mid-1990s) was an early dominant browser, initially rendering web pages using its proprietary engine. After Internet Explorer overtook Netscape, the Mozilla project was born, giving rise to <strong>Gecko</strong>, an open-source rendering engine powering Firefox from 2002 onwards. Gecko’s strength was its commitment to <strong>web standards</strong> (W3C specs, early CSS adherence), positioning it as a counter to Microsoft’s proprietary implementations.</p>
+            <h4>Internet Explorer and Trident</h4>
+            <p>Internet Explorer’s <strong>Trident engine</strong> (1997–2015) defined the “dark age” of web standards. With IE’s market share well above 80% in the early 2000s, Microsoft had little incentive to follow standards. Developers had to use “quirks mode” or write “if IE” hacks just to make layouts behave. It entrenched non-standard behaviors — for example, ActiveX controls, proprietary filters, and box model inconsistencies. Trident’s stagnation later proved catastrophic, leaving Microsoft with an outdated engine when modern standards like HTML5 and CSS3 emerged.</p>
+            <h4>Opera and Presto</h4>
+            <p>Opera was a pioneer with its <strong>Presto engine</strong> (2003–2013). It pushed boundaries: tabbed browsing, fast rendering, excellent CSS support, and features like “Opera Mini” long before others considered mobile optimization. However, Presto’s small market share meant developers often ignored it, forcing Opera to maintain heavy compatibility layers.</p>
+            <h4>Safari and WebKit</h4>
+            <p>Apple entered the game in 2003 with Safari, introducing <strong>WebKit</strong>, forked from the open-source KHTML (from the KDE project). WebKit was lightweight, standards-oriented, and most importantly, mobile-friendly. When the iPhone launched in 2007, WebKit became the <em>de facto</em> engine for mobile browsing.</p>
+            <p>Result of this era: a fragmented web. Developers optimized for Internet Explorer first, then patched for Gecko, then — if resources allowed — Presto and Safari. The famous motto of the early 2000s: <em>“Best viewed in Internet Explorer 6.”</em></p>
+
+            <h3>2. The Chrome Revolution and Blink Fork (2008–2015)</h3>
+            <h4>Why Chrome Changed Everything</h4>
+            <p>Google released <strong>Chrome in 2008</strong>, initially built on WebKit plus its own JavaScript engine <strong>V8</strong>. Chrome’s goals were pragmatic:</p>
+            <ul>
+                <li><strong>Speed</strong> – V8 compiled JavaScript into machine code, blowing past the slower interpreters of its time.</li>
+                <li><strong>Security</strong> – Chrome sand-boxed processes for each tab, making the browser more stable.</li>
+                <li><strong>Silent updates</strong> – One of the biggest shifts: users no longer had to manually download updates, which meant better security and faster adoption of new features.</li>
+            </ul>
+            <p>Chrome quickly exploded in user base because it felt simpler, faster, more stable.</p>
+            <h4>Birth of Blink (2013)</h4>
+            <p>WebKit’s codebase had grown tightly coupled to Safari’s design choices. Google engineers wanted more flexibility. So in 2013, they forked WebKit to create <strong>Blink</strong>, integrated into the open-source Chromium project. This was a turning point: Opera abandoned Presto in favor of Blink, other Chromium-based browsers emerged (Brave, Vivaldi, etc.), and Google accelerated innovation, pushing the web forward at a pace others struggled to match.</p>
+
+            <h3>3. Monoculture Accelerates (2015–2020)</h3>
+            <p>By mid-2010s, browser engine diversity was shrinking fast.</p>
+            <h4>Microsoft’s EdgeHTML Failure</h4>
+            <p>Microsoft attempted to modernize Trident into <strong>EdgeHTML</strong> for Windows 10’s Edge browser (2015). But the effort struggled: few developers tested for Edge, it lacked extensions at launch, and web compatibility remained weak. By 2019, Microsoft gave up and adopted Chromium/Blink for new Edge, effectively ending the Trident/EdgeHTML family.</p>
+            <h4>Rise of the Chromium Ecosystem</h4>
+            <p>At this point, Blink dominated desktop (Chrome, Opera, Edge, Brave, Vivaldi), WebKit fully dominated iOS (due to Apple’s App Store rule), and Gecko remained the only “independent” engine, kept alive by Mozilla’s mission.</p>
+
+            <h3>4. Today’s Reality (2020s)</h3>
+            <p>Right now, the web is essentially a <strong>duopoly</strong>: Blink/Chromium dominates everywhere except iOS, and WebKit rules iOS because Apple enforces it. Gecko/Firefox is the underdog but still relevant.</p>
+            <h4>The Good</h4>
+            <ul>
+                <li>Easier for developers: write once, run everywhere.</li>
+                <li>Rapid innovation: new APIs ship fast thanks to Chromium’s aggressive release cycle.</li>
+                <li>User security improved by automatic, frequent engine updates.</li>
+            </ul>
+            <h4>The Bad</h4>
+            <ul>
+                <li>Concentration of power: Google shapes the future of web standards through Chromium/Blink.</li>
+                <li>Innovation risk: fewer engines means fewer competing visions.</li>
+                <li>Platform lock-in: Apple legally enforces WebKit on iOS, restricting innovation.</li>
+            </ul>
+            <h4>Pragmatic Industry Implications</h4>
+            <p>For businesses: Less QA cost. For developers: Faster adoption of standardized features. For open web advocates: Worry about potential stagnation if Mozilla can’t maintain Gecko long-term.</p>
+            
+            <h3>5. The Future: Diversity or Stagnation?</h3>
+            <p>The web’s strength historically came from its resistance to monopoly. Having multiple rendering engines forced everyone to collaborate. Now, with Blink’s dominance, some argue monoculture ensures coherence, while others warn that if one corporate entity dictates the engines, the web risks becoming less open.</p>
+            <h4>Possible scenarios:</h4>
+            <ul>
+                <li>Gecko survives with enough community and corporate support.</li>
+                <li>Apple loosens iOS rules, allowing Blink or Gecko to compete natively on iPhones.</li>
+                <li>A new challenger emerges, though this is unlikely without major sponsorship.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>The browser world moved from engine diversity to a near-monoculture in the space of 20 years. The wild incompatibilities are gone, replaced by a world where Blink/WebKit enforce a pragmatic consistency. This has made development simpler and the web faster, but at a price: fewer engines, fewer competing visions, and a fragile dependency on the priorities of a handful of corporations.</p>
+            <p>So the question remains: have we traded pain for progress at the cost of freedom?</p>
+        </article>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Pierre-Alexandre Lévesque Dumais. All rights reserved.</p>
+    </footer>
+</body>
+</html>
