@@ -1,57 +1,69 @@
+/* ===============================================
+   MODERN BLOG STYLESHEET - READABLE VERSION
+   =============================================== */
+
+/* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-    /* 🎨 Modern Color Palette with Dark Mode Support */
-    --color-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --color-surface: rgba(255, 255, 255, 0.95);
-    --color-glass: rgba(255, 255, 255, 0.1);
-    --color-text: #2d3748;
-    --color-text-light: #718096;
-    --color-heading: #1a202c;
-    --color-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --color-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --color-card: rgba(255, 255, 255, 0.9);
-    --color-light-text: #ffffff;
-    --color-shadow: rgba(0, 0, 0, 0.1);
-    --color-shadow-hover: rgba(0, 0, 0, 0.15);
+    /* Colors */
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --surface-color: rgba(255, 255, 255, 0.95);
+    --glass-effect: rgba(255, 255, 255, 0.1);
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --text-heading: #1a202c;
+    --text-white: #ffffff;
+    --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --card-bg: rgba(255, 255, 255, 0.9);
     
-    /* ✨ Typography & Spacing */
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-heading: 'Inter', sans-serif;
-    --border-radius: 16px;
-    --border-radius-large: 24px;
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-xxl: 3rem;
+    /* Shadows */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-soft: 0 4px 20px var(--shadow-light);
+    --shadow-hover: 0 12px 40px var(--shadow-medium);
     
-    /* 🎭 Dynamic Effects */
-    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Typography */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+    
+    /* Border radius */
+    --radius-normal: 16px;
+    --radius-large: 24px;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --shadow-soft: 0 4px 20px var(--color-shadow);
-    --shadow-hover: 0 12px 40px var(--color-shadow-hover);
-    --backdrop-blur: blur(10px);
+    
+    /* Effects */
+    --blur-effect: blur(10px);
 }
 
-/* 🌍 Global Styles */
-*, *::before, *::after {
+/* ===== RESET & BASE STYLES ===== */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-main);
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    background: var(--color-background);
+    background: var(--bg-gradient);
     background-attachment: fixed;
-    color: var(--color-text);
+    color: var(--text-primary);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Animated background particles */
@@ -71,36 +83,40 @@ body::before {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg); 
+    }
 }
 
-/* 📦 Container */
+/* ===== LAYOUT CONTAINER ===== */
 .container {
     max-width: 900px;
-    margin: var(--spacing-xl) auto;
-    padding: 0 var(--spacing-md);
+    margin: var(--space-xl) auto;
+    padding: 0 var(--space-md);
     flex-grow: 1;
-    position: relative;
 }
 
-/* 🎯 Header with Glassmorphism */
+/* ===== HEADER SECTION ===== */
 header {
-    background: var(--color-glass);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
+    background: var(--glass-effect);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--color-light-text);
-    padding: var(--spacing-xl) var(--spacing-md);
+    color: var(--text-white);
+    padding: var(--space-xl) var(--space-md);
     text-align: center;
-    border-radius: var(--border-radius-large);
-    margin: var(--spacing-xl) auto var(--spacing-xxl);
+    border-radius: var(--radius-large);
+    margin: var(--space-xl) auto var(--space-xxl);
     box-shadow: var(--shadow-soft);
     position: relative;
     overflow: hidden;
     max-width: 900px;
 }
 
+/* Header shimmer effect */
 header::before {
     content: '';
     position: absolute;
@@ -117,11 +133,11 @@ header::before {
     100% { left: 100%; }
 }
 
+/* Header title */
 header h1 {
     margin: 0;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    font-family: var(--font-heading);
     background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -130,25 +146,27 @@ header h1 {
     line-height: 1.2;
 }
 
+/* Header navigation */
 header nav {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--space-lg);
     display: flex;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--space-lg);
     flex-wrap: wrap;
 }
 
 header nav a {
-    color: var(--color-light-text);
+    color: var(--text-white);
     text-decoration: none;
     font-weight: 500;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--border-radius);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-normal);
     transition: var(--transition-bounce);
     position: relative;
     overflow: hidden;
 }
 
+/* Navigation link hover effect */
 header nav a::before {
     content: '';
     position: absolute;
@@ -157,7 +175,7 @@ header nav a::before {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.1);
-    transition: var(--transition-base);
+    transition: var(--transition-smooth);
 }
 
 header nav a:hover::before {
@@ -169,21 +187,22 @@ header nav a:hover {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 🎴 Enhanced Card Design */
+/* ===== POST PREVIEW CARDS ===== */
 .post-preview {
-    background: var(--color-card);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
-    border-radius: var(--border-radius-large);
-    padding: var(--spacing-xxl);
-    margin-bottom: var(--spacing-xxl);
+    background: var(--card-bg);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border-radius: var(--radius-large);
+    padding: var(--space-xxl);
+    margin-bottom: var(--space-xxl);
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
-    transition: var(--transition-base);
+    transition: var(--transition-smooth);
 }
 
+/* Card top accent line */
 .post-preview::before {
     content: '';
     position: absolute;
@@ -191,7 +210,7 @@ header nav a:hover {
     left: 0;
     right: 0;
     height: 4px;
-    background: var(--color-accent);
+    background: var(--accent-gradient);
     transform: scaleX(0);
     transform-origin: left;
     transition: var(--transition-bounce);
@@ -201,6 +220,7 @@ header nav a:hover {
     transform: scaleX(1);
 }
 
+/* Card glow effect on hover */
 .post-preview::after {
     content: '';
     position: absolute;
@@ -208,11 +228,11 @@ header nav a:hover {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: var(--color-accent);
-    border-radius: var(--border-radius-large);
+    background: var(--accent-gradient);
+    border-radius: var(--radius-large);
     z-index: -1;
     opacity: 0;
-    transition: var(--transition-base);
+    transition: var(--transition-smooth);
 }
 
 .post-preview:hover {
@@ -224,11 +244,11 @@ header nav a:hover {
     opacity: 0.1;
 }
 
+/* ===== POST CONTENT ===== */
+/* Post titles */
 .post-preview h2 {
-    margin-top: 0;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-heading);
-    font-family: var(--font-heading);
+    margin: 0 0 var(--space-md) 0;
+    color: var(--text-heading);
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -0.01em;
@@ -238,14 +258,15 @@ header nav a:hover {
     text-decoration: none;
     color: inherit;
     font-size: clamp(1.5rem, 4vw, 2rem);
-    background: linear-gradient(135deg, var(--color-heading) 0%, #4a5568 100%);
+    background: linear-gradient(135deg, var(--text-heading) 0%, #4a5568 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    transition: var(--transition-base);
+    transition: var(--transition-smooth);
     position: relative;
 }
 
+/* Post title underline effect */
 .post-preview h2 a::after {
     content: '';
     position: absolute;
@@ -253,7 +274,7 @@ header nav a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-accent);
+    background: var(--accent-gradient);
     transition: var(--transition-bounce);
 }
 
@@ -261,13 +282,14 @@ header nav a:hover {
     width: 100%;
 }
 
+/* Post metadata */
 .post-meta {
-    color: var(--color-text-light);
+    color: var(--text-secondary);
     font-size: 0.9rem;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--space-lg);
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--space-sm);
     font-weight: 500;
 }
 
@@ -276,17 +298,17 @@ header nav a:hover {
     opacity: 0.7;
 }
 
-/* 🔥 Dynamic Read More Button */
+/* ===== READ MORE BUTTON ===== */
 .read-more {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
     text-decoration: none;
-    background: var(--color-primary);
-    color: var(--color-light-text);
+    background: var(--bg-gradient);
+    color: var(--text-white);
     font-weight: 600;
-    padding: var(--spacing-md) var(--spacing-xl);
+    padding: var(--space-md) var(--space-xl);
     border-radius: 50px;
     transition: var(--transition-bounce);
     position: relative;
@@ -295,6 +317,7 @@ header nav a:hover {
     letter-spacing: 0.025em;
 }
 
+/* Button shine effect */
 .read-more::before {
     content: '';
     position: absolute;
@@ -303,13 +326,13 @@ header nav a:hover {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: var(--transition-base);
+    transition: var(--transition-smooth);
 }
 
+/* Button arrow */
 .read-more::after {
     content: '→';
-    transition: var(--transition-base);
-    transform: translateX(0);
+    transition: var(--transition-smooth);
 }
 
 .read-more:hover {
@@ -329,39 +352,40 @@ header nav a:hover {
     transform: translateY(0) scale(1.02);
 }
 
-/* 👣 Enhanced Footer */
+/* ===== FOOTER ===== */
 footer {
     text-align: center;
-    padding: var(--spacing-xxl) 0;
+    padding: var(--space-xxl) 0;
     margin-top: auto;
-    color: var(--color-text-light);
+    color: var(--text-secondary);
     font-size: 0.9rem;
-    background: var(--color-glass);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
+    background: var(--glass-effect);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-weight: 500;
 }
 
-/* 📱 Enhanced Responsive Design */
+/* ===== RESPONSIVE DESIGN ===== */
+/* Tablet styles */
 @media (max-width: 768px) {
     .container {
-        margin: var(--spacing-md) auto;
-        padding: 0 var(--spacing-sm);
+        margin: var(--space-md) auto;
+        padding: 0 var(--space-sm);
     }
     
     header {
-        margin: var(--spacing-md) auto var(--spacing-xl);
-        padding: var(--spacing-xl) var(--spacing-md);
+        margin: var(--space-md) auto var(--space-xl);
+        padding: var(--space-xl) var(--space-md);
     }
     
     header nav {
-        gap: var(--spacing-md);
+        gap: var(--space-md);
     }
     
     .post-preview {
-        padding: var(--spacing-xl);
-        margin-bottom: var(--spacing-xl);
+        padding: var(--space-xl);
+        margin-bottom: var(--space-xl);
     }
     
     .post-preview:hover {
@@ -369,47 +393,49 @@ footer {
     }
 }
 
+/* Mobile styles */
 @media (max-width: 480px) {
     header nav {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--space-sm);
     }
     
     .post-preview {
-        padding: var(--spacing-lg);
+        padding: var(--space-lg);
     }
     
     .read-more {
-        padding: var(--spacing-sm) var(--spacing-lg);
+        padding: var(--space-sm) var(--space-lg);
         font-size: 0.9rem;
     }
 }
 
-/* 🌟 Accessibility Enhancements */
+/* ===== ACCESSIBILITY ===== */
+/* Reduced motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
     
-    .post-preview:hover {
-        transform: none;
-    }
-    
+    .post-preview:hover,
     .read-more:hover {
         transform: none;
     }
 }
 
-/* 🎭 Focus States for Better Accessibility */
+/* Focus states for keyboard navigation */
 .read-more:focus,
 header nav a:focus {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--bg-gradient);
     outline-offset: 2px;
 }
 
-/* ✨ Loading Animation for Dynamic Content */
+/* ===== UTILITY CLASSES ===== */
+/* Loading animation */
 @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
