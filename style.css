@@ -6,16 +6,16 @@
 :root {
     /* Noble Color Palette */
     --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-    --surface-color: rgba(248, 250, 252, 0.98);
+    --surface-color: rgba(30, 41, 59, 0.95);
     --glass-effect: rgba(248, 250, 252, 0.08);
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-heading: #020617;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-heading: #ffffff;
     --text-white: #f8fafc;
-    --text-body: #334155;
+    --text-body: #e2e8f0;
     --accent-gradient: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #7c3aed 100%);
     --gold-accent: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-    --card-bg: rgba(248, 250, 252, 0.95);
+    --card-bg: rgba(30, 41, 59, 0.9);
     
     /* Shadows - Updated for noble theme */
     --shadow-light: rgba(15, 23, 42, 0.08);
@@ -62,7 +62,7 @@ body {
     padding: 0;
     background: var(--bg-gradient);
     background-attachment: fixed;
-    color: var(--text-body);
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -180,7 +180,7 @@ header nav a::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(248, 250, 252, 0.08);
     transition: var(--transition-smooth);
 }
 
@@ -190,7 +190,8 @@ header nav a:hover::before {
 
 header nav a:hover {
     transform: translateY(-2px);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+    color: #fbbf24;
 }
 
 /* ===== POST PREVIEW CARDS ===== */
@@ -202,7 +203,7 @@ header nav a:hover {
     padding: var(--space-xxl);
     margin-bottom: var(--space-xxl);
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(248, 250, 252, 0.1);
     position: relative;
     overflow: hidden;
     transition: var(--transition-smooth);
@@ -258,11 +259,11 @@ header nav a:hover {
 
 .post-preview:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--shadow-elevated);
 }
 
 .post-preview:hover::after {
-    opacity: 0.1;
+    opacity: 0.08;
 }
 
 /* ===== POST CONTENT ===== */
@@ -291,12 +292,16 @@ header nav a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent-gradient);
+    background: var(--gold-accent);
     transition: var(--transition-bounce);
 }
 
 .post-preview h2 a:hover::after {
     width: 100%;
+}
+
+.post-preview h2 a:hover {
+    color: #fbbf24;
 }
 
 /* Post metadata */
@@ -322,7 +327,7 @@ header nav a:hover {
     gap: var(--space-sm);
     margin-top: var(--space-lg);
     text-decoration: none;
-    background: var(--bg-gradient);
+    background: var(--accent-gradient);
     color: var(--text-white);
     font-weight: 600;
     padding: var(--space-md) var(--space-xl);
@@ -332,6 +337,7 @@ header nav a:hover {
     overflow: hidden;
     font-size: 0.95rem;
     letter-spacing: 0.025em;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
 }
 
 /* Button shine effect */
@@ -342,7 +348,7 @@ header nav a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(248, 250, 252, 0.15), transparent);
     transition: var(--transition-smooth);
 }
 
@@ -354,7 +360,7 @@ header nav a:hover {
 
 .read-more:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.35);
 }
 
 .read-more:hover::before {
@@ -447,7 +453,7 @@ footer {
 /* Focus states for keyboard navigation */
 .read-more:focus,
 header nav a:focus {
-    outline: 2px solid var(--bg-gradient);
+    outline: 2px solid #a855f7;
     outline-offset: 2px;
 }
 
