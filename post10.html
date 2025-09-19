@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering the ASUS Vivobook S14 OLED M5406WA - The Digital Canvas of Paldumais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Embedded styles for a cleaner, more dynamic feel */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main.container article.full-post {
+            animation: fadeIn 0.7s ease-out forwards;
+        }
+        .full-post a {
+            transition: color 0.3s ease, text-decoration-color 0.3s ease;
+            text-decoration-color: oklch(85% 0.18 200 / 0.5);
+        }
+        .full-post a:hover {
+            color: oklch(80% 0.2 230);
+            text-decoration-color: oklch(80% 0.2 230);
+        }
+        .full-post h3, .full-post h4 {
+            transition: color 0.3s ease;
+            color: oklch(80% 0.18 200);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Digital Canvas of Paldumais</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="full-post">
+            <h2>Mastering the ASUS Vivobook S14 OLED M5406WA: Deep Technical Insights and Personalized Power-Performance Tuning</h2>
+            <p class="post-meta">Published on September 18, 2025 by Pierre-Alexandre Lévesque Dumais</p>
+
+            <p>When I dove into optimizing my ASUS Vivobook S14 OLED M5406WA, equipped with the powerhouse Ryzen 9 AI 365 and Radeon 880m GPU, I realized that peak hardware specs alone don’t guarantee the best experience. True mastery starts with fine-tuning system behaviors to perfectly match how I use the machine—whether on battery or plugged in. This journey led me to explore settings that most users don’t even know exist, yet deeply affect performance, battery life, and overall comfort. One such setting is PCIe Link State Power Management (LSPM). Let me share this exploration, my reasoning, and how you can approach it too for your own optimal experience.</p>
+            
+            <h3>Why PCIe Link State Power Management Matters More Than You Think</h3>
+            <p>At its core, the PCIe bus is the critical communication channel between your CPU and GPU. Imagine it as a high-speed highway where data travels back and forth. When idle, keeping all lanes wide open wastes energy — but slowing traffic to save fuel involves delays when the highway reopens. This analogy frames what LSPM does: it selectively powers down the PCIe lanes to save energy but introduces wake-up latency when activity resumes.</p>
+            <p>There are three main configurations of LSPM:</p>
+            <ul>
+                <li><strong>Off:</strong> The PCIe link stays fully powered at all times, ensuring zero latency in communication. This consumes more power but guarantees immediate responsiveness.</li>
+                <li><strong>Moderate Power Savings:</strong> The link enters a light low-power state during idle periods, balancing energy savings with relatively quick wake-up.</li>
+                <li><strong>Maximum Power Savings:</strong> The link aggressively enters a deep low-power state, maximizing energy reduction but incurring longer wake latencies.</li>
+            </ul>
+            <p>Each choice fundamentally shifts the balance between system reactivity and battery longevity.</p>
+            <p>For a laptop like the Vivobook S14 OLED M5406WA, with a powerful Ryzen 9 processor and Radeon 880m GPU integrated on a shared PCIe connection, this choice is especially significant. Mismanaging it can cause subtle lag or reduced battery life that’s easy to overlook until performance is critical.</p>
+            
+            <h3>The Philosophy Behind My Settings: Crafting Two Perfect Worlds</h3>
+            <p>Rather than a “one-size-fits-all” approach, I view the laptop as two machines in one: a mobile dependable companion on battery, and a high-performance beast plugged in. Each world requires a unique strategy.</p>
+            
+            <h4>On Battery: Extending Runtime Without Sacrificing Usability</h4>
+            <p>When untethered from power, the priorities shift toward maximizing every joule of battery. Since modern OLED screens, CPUs, and GPUs can be power hungry, this setting suite is about soft compromises and intelligent throttling.</p>
+            <ul>
+                <li><strong>Reduce the Display Refresh Rate to 60Hz:</strong> OLED displays are visually stunning, but 120Hz consumes significantly more energy. Dropping to 60Hz reduces the display's power draw while retaining beautiful image quality.</li>
+                <li><strong>Disable HDR:</strong> While HDR enhances color and brightness, it too increases power consumption. Turning it off favors longevity.</li>
+                <li><strong>Set PCIe LSPM to Maximum Power Savings:</strong> This lets the PCIe link go into its deepest low-power sleep when idle. It introduces minor latency but saves significant power, crucial for longer unplugged sessions.</li>
+                <li><strong>Select “Best Power Efficiency” Plan:</strong> Windows’ power plan throttles CPU and GPU frequency aggressively under low load, balancing smooth usage with energy savings.</li>
+                <li><strong>Enable Wi-Fi Auto Power Saving:</strong> This allows the wireless adapter to intelligently reduce power without manual intervention.</li>
+                <li><strong>Use Radeon HYPR-RX in Eco Mode:</strong> This AMD feature dynamically scales GPU frequencies and voltages based on workload, preventing wasted power draw during light tasks.</li>
+                <li><strong>Quiet Fans in ASUSAPP Silent Mode:</strong> By reducing fan speeds, the laptop remains discreet in quiet environments, though temperatures rise slightly.</li>
+            </ul>
+            <p>This careful combination means I comfortably get more hours of use while still enjoying fluid workflows for casual browsing, document editing, or streaming—without noisy fans or heat buildup.</p>
+            
+            <h4>Plugged In: Unlocking Uncompromised Performance and Responsiveness</h4>
+            <p>When connected to power, I want every watt focused on performance. Whether gaming, video editing, or running virtual machines, latency and throughput are critical.</p>
+            <ul>
+                <li><strong>Increase Display Refresh Rate to 120Hz and Enable HDR:</strong> Makes full use of the outstanding OLED panel, delivering buttery smooth visuals and vivid color depth.</li>
+                <li><strong>Disable PCIe LSPM (“Off” Mode):</strong> Keeps the PCIe bus fully powered 100% of the time, preventing any link wake latency. This improves frame pacing and reduces input lag in games, and accelerates GPU data transfers.</li>
+                <li><strong>Switch to “Best Performance” Power Plan:</strong> Allows the CPU and GPU to run at peak frequencies with minimal power gating.</li>
+                <li><strong>Activate Full Radeon HYPR-RX Mode:</strong> The GPU applies aggressive dynamic boosting, running at higher frequencies and voltages on demand.</li>
+                <li><strong>Set Fan Profile to Best Performance in ASUSAPP:</strong> Fans ramp up proactively, preventing thermal throttling and keeping components cool under load.</li>
+            </ul>
+            <p>This configuration ensures my laptop feels powerful and responsive, balancing the tradeoff of higher energy use and fan noise—perfect for focused, intensive tasks.</p>
+            
+            <h3>Addressing Fast Boot and Fast Startup</h3>
+            <p>I deliberately disabled Fast Boot and Fast Startup in both modes because while these features reduce boot times significantly, they sometimes clash with advanced hardware and OS setups, causing instability or driver initialization issues. Disabling them increases boot reliability and system stability at the cost of a slightly longer startup.</p>
+            
+            <h3>Implementing This Setup: Step-by-Step Practical Guide</h3>
+            <p>Achieving this tailored power-performance equilibrium is easier than it sounds. Here’s the precise method:</p>
+            
+            <h4>Open Windows Power Options:</h4>
+            <ol>
+                <li>Search “Power Options” in the Start menu.</li>
+                <li>Click “Change plan settings” next to your current active plan.</li>
+                <li>Select “Change advanced power settings.”</li>
+            </ol>
+            
+            <h4>Adjust PCI Express Link State Power Management:</h4>
+            <ol>
+                <li>Locate the “PCI Express” category.</li>
+                <li>Open “Link State Power Management.”</li>
+                <li>Set “On battery” to <strong>Maximum Power Savings</strong>.</li>
+                <li>Set “Plugged in” to <strong>Off</strong>.</li>
+            </ol>
+            
+            <h4>Tune AMD Radeon HYPR-RX Profiles:</h4>
+            <ol>
+                <li>Open AMD Radeon Software.</li>
+                <li>Switch between <strong>HYPR-RX eco</strong> for battery mode and full <strong>HYPR-RX</strong> for plugged-in mode.</li>
+            </ol>
+            
+            <h4>Configure Display Settings Dynamically:</h4>
+            <ol>
+                <li>Reduce refresh rate to 60Hz and disable HDR on battery.</li>
+                <li>Raise refresh rate to 120Hz and enable HDR when plugged in.</li>
+            </ol>
+            
+            <h4>Adjust Fan Profiles via ASUSAPP:</h4>
+            <ol>
+                <li>Set fans to <strong>Silent</strong> on battery.</li>
+                <li>Switch fans to <strong>Best Performance</strong> on plugged-in.</li>
+            </ol>
+            
+            <h4>Disable Fast Startup and Fast Boot:</h4>
+            <ol>
+                <li>Go to Control Panel > Power Options > “Choose what the power buttons do.”</li>
+                <li>Click “Change settings that are currently unavailable.”</li>
+                <li>Uncheck <strong>Turn on fast startup</strong>.</li>
+            </ol>
+            
+            <h3>The Bigger Picture: Why I Believe Fine Control Matters</h3>
+            <p>Tech enthusiasts sometimes chase raw specs or benchmark numbers, but what drives me is making daily computing smoother, more enjoyable, and less distracting. This journey taught me that detailed understanding and custom tuning bridge the gap between raw power and real-world usability.</p>
+            <p>The impact of tweaking something like PCIe Link State Power Management is subtle until you experience it. Turning it off on AC reduces stutter, smooths gaming frames, and instantly improves graphical responsiveness without switching hardware or upgrades. Conversely, letting it aggressively save power on battery dramatically extends unplugged use while keeping noise and heat down.</p>
+            <p>Balancing these states is an act of curiosity, exploration, and constant learning—qualities that any tech lover can appreciate. It’s about respecting the machine’s design and pushing it exactly where it makes sense without blindly following defaults.</p>
+            
+            <h3>Final Thoughts</h3>
+            <p>Your machine is only as good as the care and understanding you invest in it. The ASUS Vivobook S14 OLED M5406WA is an advanced and elegant device, capable of remarkable performance and efficiency. My tuning approach embraces the full spectrum of possibilities—from quiet, efficient mobility to unrestrained high performance at a desk—enabled by fine control of power management, graphics, display, and thermal profiles.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pierre-Alexandre Lévesque Dumais. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
