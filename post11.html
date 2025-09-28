@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine-Tuning My Audio: Ubuntu, EasyEffects, and the FiiO KA13 - The Digital Canvas of Paldumais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Embedded styles for a cleaner, more dynamic feel */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main.container article.full-post {
+            animation: fadeIn 0.7s ease-out forwards;
+        }
+        .full-post a {
+            transition: color 0.3s ease, text-decoration-color 0.3s ease;
+            text-decoration-color: oklch(85% 0.18 200 / 0.5);
+        }
+        .full-post a:hover {
+            color: oklch(80% 0.2 230);
+            text-decoration-color: oklch(80% 0.2 230);
+        }
+        .full-post h3, .full-post h4 {
+            transition: color 0.3s ease;
+            color: oklch(80% 0.18 200);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Digital Canvas of Paldumais</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="full-post">
+            <h2>Fine-Tuning My Audio: Ubuntu, EasyEffects, and the FiiO KA13</h2>
+            <p class="post-meta">Published on September 25, 2025 by Pierre-Alexandre Lévesque Dumais</p>
+
+            <p>Switching between operating systems can sometimes feel like a permanent trade-off: performance versus stability, flexibility versus convenience, or in my case—audio quality versus software support. When I decided to pair my Ubuntu 24.04.3 setup with the FiiO KA13 DAC and the Audio-Technica ATH-MSR7b headphones, I was half-expecting a trail of driver headaches, odd glitches, and late-night “am I even hearing correctly?” doubts. But this combo turned out to be one of the most satisfying experiences I’ve had with desktop audio—especially once I pulled EasyEffects into the workflow.</p>
+            
+            <h3>First Impressions: Plug-and-Play with the KA13 on Linux</h3>
+            <p>The FiiO KA13 might look like another small “dongle DAC,” but it punches well above its size in terms of decoding ability and sheer drive power. Plugging it into my Ubuntu 24.04.3 system was refreshingly painless. No extra drivers, no Windows-style utilities—just instant ALSA/PipeWire recognition.</p>
+            <p>The Audio-Technica ATH-MSR7b headphones, connected via their 4.4mm unbalanced cable, were already known to me: detailed, neutral leaning towards brighter treble with just enough bass presence to satisfy without overpowering. What surprised me was how <em>alive</em> they felt with the KA13. The synergy out of the box was good, but I knew from past experience that software EQ could transform “good” into <em>remarkable</em>. Enter EasyEffects.</p>
+            
+            <h3>The Role of EasyEffects</h3>
+            <p>Ubuntu’s stock audio is fine if you listen casually, but with something like the MSR7b—headphones that reveal every small dip and peak—a proper parametric EQ isn’t just nice-to-have, it’s essential. EasyEffects makes this possible on Linux with a clean yet powerful GUI.</p>
+            <p>I started with an AutoEq profile tailored for the MSR7b, then made small tweaks by ear:</p>
+            <ul>
+                <li>Tamed the 6–7 kHz brightness to reduce listening fatigue on complex mixes.</li>
+                <li>Gave the sub-bass a gentle lift around 60 Hz to add some depth, without turning the MSR7b into bass cannons.</li>
+                <li>Smoothed out upper mids (2–3 kHz) slightly, keeping vocals natural without being shouty.</li>
+            </ul>
+            <p>The result? Tracks that once felt “studio-flat” suddenly had a sense of space and warmth while keeping their precision intact. Cymbals no longer bit into my ears, and basslines had a controlled but satisfying punch.</p>
+            
+            <h3>Daily Use: Productivity and Music</h3>
+            <p>Most of my Ubuntu sessions involve writing, browsing, and occasionally jumping into games or video calls. With EasyEffects running, I found that even low-quality YouTube streams or compressed conference audio benefitted from some subtle dynamic range adjustments via the multiband compressor.</p>
+            <p>Music listening, though, is where the setup really shines. High-resolution FLAC files opened up with clean separation, and electronic tracks gained a physicality I hadn’t experienced before on Linux. The KA13 pushed the MSR7b with authority, never once leaving me thinking, “maybe I should upgrade to balanced.” The unbalanced 4.4mm cable was already enough to deliver headroom without distortion or noise.</p>
+            
+            <h3>Reflections: The Beauty of Linux Audio</h3>
+            <p>What struck me during this experiment wasn’t just how well FiiO hardware works with Linux, but how sophisticated audio processing on Ubuntu has become. PipeWire + EasyEffects feel every bit as capable as Windows solutions, minus the bloat and proprietary roadblocks.</p>
+            <p>On Windows, FiiO’s drivers and software can give fine-tuned control—but I didn’t miss them. Ubuntu let me shape my sound the way <em>I</em> wanted, with open-source tools and zero vendor lock-in. It was empowering to realize I could customize my entire audio chain at the system level with a few filters.</p>
+            
+            <h3>Closing Thoughts</h3>
+            <p>If you’d asked me a year ago whether Linux could equal or even surpass Windows/macOS in Hi-Fi audio flexibility, I’d have hesitated. But with Ubuntu 24.04.3, the KA13 DAC, the ATH-MSR7b, and EasyEffects, I’ve reached a setup that feels personal, transparent, and engaging.</p>
+            <p>The MSR7b headphones are finally living up to their potential, and the KA13 proves that even small DACs can thrive in a Linux ecosystem when paired with the right software. What started as just testing hardware compatibility turned into rediscovering my music collection in a whole new way.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pierre-Alexandre Lévesque Dumais. All rights reserved.</p>
+    </footer>
+</body>
+</html>
