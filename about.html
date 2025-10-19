@@ -6,34 +6,371 @@
     <title>About Me - The Digital Canvas of Paldumais</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: #0a0e27;
+            color: #00ff41;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0d1117;
+            border-bottom: 2px solid #00ff41;
+            padding: 1rem 2rem;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00ff41;
+            margin-bottom: 0.5rem;
+        }
+
+        header h1::before {
+            content: '$ ';
+            color: #00ff41;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #00ff41;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::before {
+            content: '[ ';
+        }
+
+        nav a::after {
+            content: ' ]';
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .terminal-window {
+            background: #0d1117;
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #161b22;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid #00ff41;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .btn-close { background: #ff5f56; }
+        .btn-minimize { background: #ffbd2e; }
+        .btn-maximize { background: #27c93f; }
+
+        .terminal-title {
+            margin-left: 1rem;
+            color: #8b949e;
+            font-size: 0.85rem;
+        }
+
+        .terminal-body {
+            padding: 2rem;
+        }
+
+        .command-line {
+            margin-bottom: 1rem;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .prompt {
+            color: #00ff41;
+            font-weight: 700;
+        }
+
+        .prompt::before {
+            content: '> ';
+        }
+
+        .command {
+            color: #58a6ff;
+        }
+
+        .output {
+            color: #8b949e;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output.highlight {
+            color: #00ff41;
+        }
+
+        .ascii-art {
+            color: #00ff41;
+            white-space: pre;
+            font-size: 0.7rem;
+            line-height: 1.2;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .stat-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #1f2937;
+        }
+
+        .stat-label {
+            color: #58a6ff;
+        }
+
+        .stat-value {
+            color: #00ff41;
+            font-weight: 700;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .tag {
+            color: #0d1117;
+            background: #00ff41;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff41;
+            animation: blink 1s infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .section-header {
+            color: #00ff41;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #00ff41;
+        }
+
+        .section-header::before {
+            content: '## ';
+        }
+
+        footer {
+            background: #0d1117;
+            border-top: 2px solid #00ff41;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        footer::before {
+            content: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
+            display: block;
+            margin-bottom: 1rem;
+            color: #00ff41;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .ascii-art {
+                font-size: 0.5rem;
+            }
+
+            header h1 {
+                font-size: 1rem;
+            }
+
+            .terminal-body {
+                padding: 1rem;
+            }
+
+            .tag-list {
+                padding-left: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section with Blog Title and Navigation -->
     <header>
-        <h1>The Digital Canvas of Paldumais</h1>
+        <h1>paldumais@digital-canvas</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
         </nav>
     </header>
 
-    <!-- Main Content Area for the About page -->
     <main class="container">
-        <article class="full-post">
-            <h2>About Me</h2>
-            <p class="post-meta">Pierre-Alexandre Lévesque Dumais</p>
-            <p>Welcome to my corner of the internet. I'm a passionate creator and technologist, always exploring the intersection of new ideas and creative expression. This blog is where I document my journey, sharing my process, inspirations, and the stories behind my various projects.</p>
-            <p>My interests are broad and ever-changing, from diving into the latest software to exploring creative coding and beyond. I believe that sharing our passions is a powerful way to connect, and I'm excited to have this platform to share my journey with you.</p>
-        </article>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-button btn-close"></span>
+                <span class="terminal-button btn-minimize"></span>
+                <span class="terminal-button btn-maximize"></span>
+                <span class="terminal-title">about.sh — bash</span>
+            </div>
+            <div class="terminal-body">
+                <div class="command-line">
+                    <span class="prompt">paldumais@system</span>
+                    <span class="command">cat about.txt</span>
+                </div>
+
+                <div class="ascii-art">
+ ____        _     _                       _     
+|  _ \ ___ _| | __| |_   _ _ __ ___   __ _(_)___ 
+| |_) / _' | |/ _' | | | | '_ ' _ \ / _' | / __|
+|  __/ (_| | | (_| | |_| | | | | | | (_| | \__ \
+|_|   \__,_|_|\__,_|\__,_|_| |_| |_|\__,_|_|___/
+                </div>
+
+                <div class="output">
+                    <strong style="color: #00ff41;">NAME</strong><br>
+                    Pierre-Alexandre Lévesque Dumais
+                </div>
+
+                <div class="output">
+                    <strong style="color: #00ff41;">ROLE</strong><br>
+                    Creator • Technologist • Digital Explorer
+                </div>
+
+                <div class="output">
+                    <strong style="color: #00ff41;">DESCRIPTION</strong><br>
+                    Welcome to my digital terminal. I exist at the intersection of<br>
+                    creativity and code, constantly exploring new frontiers in tech.<br>
+                    This space documents my journey through the matrix of innovation,<br>
+                    sharing experiments, discoveries, and the occasional breakthrough.
+                </div>
+
+                <div class="section-header">SYSTEM_STATS</div>
+
+                <div class="stat-line">
+                    <span class="stat-label">curiosity_level:</span>
+                    <span class="stat-value">[████████████████████] 100%</span>
+                </div>
+                <div class="stat-line">
+                    <span class="stat-label">creativity_index:</span>
+                    <span class="stat-value">[████████████████████] INFINITE</span>
+                </div>
+                <div class="stat-line">
+                    <span class="stat-label">passion_drive:</span>
+                    <span class="stat-value">[████████████████████] MAXIMUM</span>
+                </div>
+                <div class="stat-line">
+                    <span class="stat-label">uptime:</span>
+                    <span class="stat-value">24/7/365</span>
+                </div>
+
+                <div class="command-line" style="margin-top: 2rem;">
+                    <span class="prompt">paldumais@system</span>
+                    <span class="command">ls -la interests/</span>
+                </div>
+
+                <div class="tag-list">
+                    <span class="tag">/creative-coding</span>
+                    <span class="tag">/software-exploration</span>
+                    <span class="tag">/digital-art</span>
+                    <span class="tag">/tech-innovation</span>
+                    <span class="tag">/problem-solving</span>
+                    <span class="tag">/continuous-learning</span>
+                    <span class="tag">/design-thinking</span>
+                    <span class="tag">/experimental-projects</span>
+                </div>
+
+                <div class="command-line" style="margin-top: 2rem;">
+                    <span class="prompt">paldumais@system</span>
+                    <span class="command">echo $PHILOSOPHY</span>
+                </div>
+
+                <div class="output highlight">
+                    "The best way to predict the future is to create it.<br>
+                    One commit at a time. One experiment at a time.<br>
+                    One crazy idea at a time."
+                </div>
+
+                <div class="command-line" style="margin-top: 2rem;">
+                    <span class="prompt">paldumais@system</span>
+                    <span class="cursor"></span>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Pierre-Alexandre Lévesque Dumais. All rights reserved.</p>
+        <p>© 2025 Pierre-Alexandre Lévesque Dumais | All rights reserved</p>
+        <p style="margin-top: 0.5rem; color: #00ff41;">[ System Status: ONLINE ]</p>
     </footer>
 </body>
 </html>
-
-
