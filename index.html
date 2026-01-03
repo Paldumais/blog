@@ -10,84 +10,105 @@
 <meta name="author" content="Pierre-Alexandre Lévesque Dumais">
 <meta name="keywords" content="tech blog, Linux, AI, open-source, digital life, Paldumais">
 
+<!-- Canonical URL -->
+<link rel="canonical" href="https://blog.pald.me/">
+
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:title" content="The Digital Canvas of Paldumais">
 <meta property="og:description" content="Explorations in technology, Linux, AI, and digital life.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://paldumais.github.io/">
-<meta property="og:image" content="https://paldumais.github.io/preview.jpg">
+<meta property="og:url" content="https://blog.pald.me/">
+<meta property="og:image" content="https://blog.pald.me/preview.jpg">
 <meta property="og:site_name" content="The Digital Canvas of Paldumais">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Digital Canvas of Paldumais">
 <meta name="twitter:description" content="Explorations in technology, Linux, AI, and digital life.">
-<meta name="twitter:image" content="https://paldumais.github.io/preview.jpg">
+<meta name="twitter:image" content="https://blog.pald.me/preview.jpg">
 <meta name="twitter:creator" content="@paldumais">
 
 <!-- LinkedIn Profile -->
 <link rel="me" href="https://www.linkedin.com/in/paldumais/" />
-<a rel="me" href="https://mastodon.social/@paldumais">Mastodon</a>
 
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
-  <!-- Fonts and stylesheet -->
+  <!-- Preconnect hints for performance -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Header -->
   <header>
     <h1>The Digital Canvas of Paldumais</h1>
     <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
+      <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="https://terminal.pald.me/">Fun Terminal</a>
-      <a href="http://terminal.pald.me/codebeat/">CodeBeat</a>
-      <a href="http://terminal.pald.me/impossible-bird-game/">Impossible Bird Game</a>
+      <a href="https://terminal.pald.me/codebeat/">CodeBeat</a>
+      <a href="https://terminal.pald.me/impossible-bird-game/">Impossible Bird Game</a>
     </nav>
+    <div class="social-links">
+      <a rel="me" href="https://mastodon.social/@paldumais" aria-label="Follow on Mastodon">Mastodon</a>
+      <a rel="me" href="https://www.linkedin.com/in/paldumais/" aria-label="Connect on LinkedIn">LinkedIn</a>
+    </div>
   </header>
 
   <!-- Main content -->
-  <main class="container">
+  <main id="main-content" class="container">
     <article class="post-preview">
       <h2><a href="post11.html">Fine-Tuning My Audio: Ubuntu, EasyEffects, and the FiiO KA13</a></h2>
-      <p class="post-meta">September 25, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-25">September 25, 2025</time></p>
       <p class="post-summary">Achieving high-fidelity audio on Ubuntu 24.04 by pairing a FiiO KA13 DAC with ATH-MSR7b headphones and EasyEffects for personalized sound.</p>
-      <a href="post11.html" class="btn">Read More →</a>
+      <a href="post11.html" class="btn" aria-label="Read more about Fine-Tuning My Audio">Read More →</a>
     </article>
 
     <article class="post-preview">
       <h2><a href="post10.html">Mastering the ASUS Vivobook S14 OLED M5406WA</a></h2>
-      <p class="post-meta">September 18, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-18">September 18, 2025</time></p>
       <p class="post-summary">Optimizing the ASUS Vivobook S14 with fine-tuned power-performance settings like PCIe Link State Power Management.</p>
-      <a href="post10.html" class="btn">Read More →</a>
+      <a href="post10.html" class="btn" aria-label="Read more about Mastering the ASUS Vivobook S14">Read More →</a>
     </article>
 
     <article class="post-preview">
       <h2><a href="post9.html">The Alluring Simplicity of a Flawed Idea</a></h2>
-      <p class="post-meta">September 14, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-14">September 14, 2025</time></p>
       <p class="post-summary">Why “if it ain't broke, don’t fix it” is dangerous in a fast-changing world, and why constant improvement wins.</p>
       <a href="post9.html" class="btn">Read More →</a>
     </article>
 
     <article class="post-preview">
       <h2><a href="post8.html">Simple Cybersecurity Habits I Practice</a></h2>
-      <p class="post-meta">September 12, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-12">September 12, 2025</time></p>
       <p class="post-summary">The small but powerful cybersecurity habits that protect my digital life.</p>
-      <a href="post8.html" class="btn">Read More →</a>
+      <a href="post8.html" class="btn" aria-label="Read more about Simple Cybersecurity Habits">Read More →</a>
     </article>
 
     <article class="post-preview">
       <h2><a href="post7.html">String Theory: A Journey into the Fabric of Reality</a></h2>
-      <p class="post-meta">September 16, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-16">September 16, 2025</time></p>
       <p class="post-summary">Exploring one of physics’ most ambitious unification attempts—tiny vibrating strings and extra dimensions.</p>
-      <a href="post7.html" class="btn">Read More →</a>
+      <a href="post7.html" class="btn" aria-label="Read more about String Theory">Read More →</a>
     </article>
 
     <article class="post-preview">
@@ -99,7 +120,7 @@
 
     <article class="post-preview">
       <h2><a href="post5.html">From Browser Wars to Engine Monoculture</a></h2>
-      <p class="post-meta">September 12, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-12">September 12, 2025</time></p>
       <p class="post-summary">Tracing the web’s journey from incompatibility chaos to WebKit/Blink dominance.</p>
       <a href="post5.html" class="btn">Read More →</a>
     </article>
@@ -108,28 +129,28 @@
       <h2><a href="post4.html">Vibe Coding Unleashed</a></h2>
       <p class="post-meta">September 9, 2025</p>
       <p class="post-summary">How I learned to embrace “vibe coding” with AI while staying precise and geeky.</p>
-      <a href="post4.html" class="btn">Read More →</a>
+      <a href="post4.html" class="btn" aria-label="Read more about Vibe Coding Unleashed">Read More →</a>
     </article>
 
     <article class="post-preview">
       <h2><a href="post3.html">How Hyprland Turned My CachyOS Desktop Into a Tiling Machine</a></h2>
-      <p class="post-meta">September 5, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-05">September 5, 2025</time></p>
       <p class="post-summary">From messy windows to a well-oiled tiling setup with Hyprland on CachyOS.</p>
-      <a href="post3.html" class="btn">Read More →</a>
+      <a href="post3.html" class="btn" aria-label="Read more about Hyprland on CachyOS">Read More →</a>
     </article>
 
     <article class="post-preview">
       <h2><a href="post2.html">My Personal Journey with CachyOS</a></h2>
-      <p class="post-meta">September 2, 2025</p>
+      <p class="post-meta"><time datetime="2025-09-02">September 2, 2025</time></p>
       <p class="post-summary">How Linux went from Ubuntu 8.04 experiments to finally sticking with CachyOS.</p>
-      <a href="post2.html" class="btn">Read More →</a>
+      <a href="post2.html" class="btn" aria-label="Read more about My Personal Journey with CachyOS">Read More →</a>
     </article>
 
     <article class="post-preview">
       <h2><a href="post1.html">And So It Begins</a></h2>
-      <p class="post-meta">August 28, 2025</p>
+      <p class="post-meta"><time datetime="2025-08-28">August 28, 2025</time></p>
       <p class="post-summary">The summary of my very first blog post.</p>
-      <a href="post1.html" class="btn">Read More →</a>
+      <a href="post1.html" class="btn" aria-label="Read more about And So It Begins">Read More →</a>
     </article>
   </main>
 
@@ -137,5 +158,8 @@
   <footer>
     <p>&copy; 2025 Pierre-Alexandre Lévesque Dumais. All rights reserved.</p>
   </footer>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
 </body>
 </html>
