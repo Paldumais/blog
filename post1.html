@@ -3,27 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Blog Post - The Digital Canvas of Paldumais</title>
+    <title>And So It Begins - The Digital Canvas of Paldumais</title>
+    
+    <!-- Metadata for SEO -->
+    <meta name="description" content="Welcome to my blog! A space to explore passions for technology, adventure, and sharing what I learn.">
+    <meta name="author" content="Pierre-Alexandre Lévesque Dumais">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://blog.pald.me/post1.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="And So It Begins - The Digital Canvas of Paldumais">
+    <meta property="og:description" content="Welcome to my blog! A space to explore passions for technology, adventure, and sharing what I learn.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blog.pald.me/post1.html">
+    <meta property="og:site_name" content="The Digital Canvas of Paldumais">
+    
+    <!-- Preconnect hints for performance -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header Section with Blog Title and Navigation -->
     <header>
         <h1>The Digital Canvas of Paldumais</h1>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
+            <a href="https://terminal.pald.me/">Fun Terminal</a>
+            <a href="https://terminal.pald.me/codebeat/">CodeBeat</a>
+            <a href="https://terminal.pald.me/impossible-bird-game/">Impossible Bird Game</a>
         </nav>
+        <div class="social-links">
+            <a rel="me" href="https://mastodon.social/@paldumais" aria-label="Follow on Mastodon">Mastodon</a>
+            <a rel="me" href="https://www.linkedin.com/in/paldumais/" aria-label="Connect on LinkedIn">LinkedIn</a>
+        </div>
     </header>
 
     <!-- Main Content Area for the full post -->
-   <main class="container">
+   <main id="main-content" class="container">
         <article class="full-post">
             <h2>And So It Begins</h2>
-            <p class="post-meta">Published on September 2, 2025</p>
+            <p class="post-meta">Published on <time datetime="2025-08-28">August 28, 2025</time></p>
             <p>Welcome! I've created this space to explore my passions for technology, adventure, and sharing what I learn. It's a place for unfiltered opinions, useful tips, and stories from the road.</p>
             <p>Expect to find:</p>
             <ul>
@@ -40,6 +77,8 @@
     <footer>
         <p>&copy; 2025 Pierre-Alexandre Lévesque Dumais. All rights reserved.</p>
     </footer>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
 </body>
 </html>
 

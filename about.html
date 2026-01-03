@@ -4,91 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - The Digital Canvas of Paldumais</title>
+    
+    <!-- Metadata for SEO -->
+    <meta name="description" content="About Pierre-Alexandre Lévesque Dumais - Creator, Technologist, and Digital Explorer.">
+    <meta name="author" content="Pierre-Alexandre Lévesque Dumais">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://blog.pald.me/about.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Me - The Digital Canvas of Paldumais">
+    <meta property="og:description" content="About Pierre-Alexandre Lévesque Dumais - Creator, Technologist, and Digital Explorer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blog.pald.me/about.html">
+    <meta property="og:site_name" content="The Digital Canvas of Paldumais">
+    
+    <!-- Preconnect hints for performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'JetBrains Mono', monospace;
-            background: #0a0e27;
-            color: #00ff41;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        header {
-            background: #0d1117;
-            border-bottom: 2px solid #00ff41;
-            padding: 1rem 2rem;
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
-        }
-
-        header h1 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #00ff41;
-            margin-bottom: 0.5rem;
-        }
-
-        header h1::before {
-            content: '$ ';
-            color: #00ff41;
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.9rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #00ff41;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        nav a::before {
-            content: '[ ';
-        }
-
-        nav a::after {
-            content: ' ]';
-        }
-
-        nav a:hover {
-            color: #fff;
-            text-shadow: 0 0 10px #00ff41;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
+        /* About page specific styles */
         .terminal-window {
-            background: #0d1117;
-            border: 2px solid #00ff41;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
-            margin-bottom: 2rem;
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-2xl);
             overflow: hidden;
         }
 
         .terminal-header {
-            background: #161b22;
-            padding: 0.5rem 1rem;
+            background: var(--bg);
+            padding: var(--space-sm) var(--space-md);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            border-bottom: 1px solid #00ff41;
+            gap: var(--space-sm);
+            border-bottom: 1px solid var(--border);
         }
 
         .terminal-button {
@@ -103,33 +69,21 @@
         .btn-maximize { background: #27c93f; }
 
         .terminal-title {
-            margin-left: 1rem;
-            color: #8b949e;
+            margin-left: var(--space-md);
+            color: var(--text-dim);
             font-size: 0.85rem;
         }
 
         .terminal-body {
-            padding: 2rem;
+            padding: var(--space-2xl);
         }
 
         .command-line {
-            margin-bottom: 1rem;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            margin-bottom: var(--space-md);
         }
 
         .prompt {
-            color: #00ff41;
+            color: var(--accent);
             font-weight: 700;
         }
 
@@ -138,112 +92,89 @@
         }
 
         .command {
-            color: #58a6ff;
+            color: var(--accent-alt);
         }
 
         .output {
-            color: #8b949e;
-            padding-left: 2rem;
-            margin-top: 0.5rem;
+            color: var(--text-muted);
+            padding-left: var(--space-2xl);
+            margin-top: var(--space-sm);
             line-height: 1.8;
         }
 
         .output.highlight {
-            color: #00ff41;
+            color: var(--accent);
         }
 
         .ascii-art {
-            color: #00ff41;
+            color: var(--accent);
             white-space: pre;
             font-size: 0.7rem;
             line-height: 1.2;
-            margin: 1rem 0;
+            margin: var(--space-md) 0;
             text-align: center;
         }
 
         .stat-line {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px dashed #1f2937;
+            padding: var(--space-sm) 0;
+            border-bottom: 1px dashed var(--border);
         }
 
         .stat-label {
-            color: #58a6ff;
+            color: var(--accent-alt);
         }
 
         .stat-value {
-            color: #00ff41;
+            color: var(--accent);
             font-weight: 700;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding-left: 2rem;
-            margin-top: 0.5rem;
-        }
-
-        .tag {
-            color: #0d1117;
-            background: #00ff41;
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .tag:hover {
-            background: #fff;
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 18px;
-            background: #00ff41;
-            animation: blink 1s infinite;
-            margin-left: 5px;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
         }
 
         .section-header {
-            color: #00ff41;
+            color: var(--accent);
             font-size: 1.2rem;
             font-weight: 700;
-            margin: 1.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #00ff41;
+            margin: var(--space-xl) 0 var(--space-md) 0;
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--border);
         }
 
         .section-header::before {
             content: '## ';
         }
 
-        footer {
-            background: #0d1117;
-            border-top: 2px solid #00ff41;
-            padding: 1.5rem;
-            text-align: center;
-            margin-top: 3rem;
-            color: #8b949e;
-            font-size: 0.9rem;
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            padding-left: var(--space-2xl);
+            margin-top: var(--space-sm);
         }
 
-        footer::before {
-            content: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
-            display: block;
-            margin-bottom: 1rem;
-            color: #00ff41;
-            opacity: 0.3;
+        .tag {
+            color: var(--bg);
+            background: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius);
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: var(--accent-hover);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: var(--accent);
+            animation: blink 1s infinite;
+            margin-left: 5px;
         }
 
         @media (max-width: 768px) {
@@ -251,30 +182,36 @@
                 font-size: 0.5rem;
             }
 
-            header h1 {
-                font-size: 1rem;
-            }
-
             .terminal-body {
-                padding: 1rem;
+                padding: var(--space-lg);
             }
 
             .tag-list {
-                padding-left: 1rem;
+                padding-left: var(--space-md);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header>
-        <h1>paldumais@digital-canvas</h1>
-        <nav>
-            <a href="index.html">home</a>
-            <a href="about.html">about</a>
+        <h1>The Digital Canvas of Paldumais</h1>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html" aria-current="page">About</a>
+            <a href="https://terminal.pald.me/">Fun Terminal</a>
+            <a href="https://terminal.pald.me/codebeat/">CodeBeat</a>
+            <a href="https://terminal.pald.me/impossible-bird-game/">Impossible Bird Game</a>
         </nav>
+        <div class="social-links">
+            <a rel="me" href="https://mastodon.social/@paldumais" aria-label="Follow on Mastodon">Mastodon</a>
+            <a rel="me" href="https://www.linkedin.com/in/paldumais/" aria-label="Connect on LinkedIn">LinkedIn</a>
+        </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
         <div class="terminal-window">
             <div class="terminal-header">
                 <span class="terminal-button btn-close"></span>
@@ -369,8 +306,10 @@
     </main>
 
     <footer>
-        <p>© 2025 Pierre-Alexandre Lévesque Dumais | All rights reserved</p>
-        <p style="margin-top: 0.5rem; color: #00ff41;">[ System Status: ONLINE ]</p>
+        <p>&copy; 2025 Pierre-Alexandre Lévesque Dumais. All rights reserved.</p>
     </footer>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
 </body>
 </html>
